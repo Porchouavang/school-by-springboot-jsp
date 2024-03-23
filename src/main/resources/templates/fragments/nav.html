@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/spur.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="/js/chart-js-config.js"></script>
+    <title>ລະບົບຈັດວິທະຍາໄລພະເມືອງ</title>
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans Lao' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Noto Sans Lao';font-size: 22px;
+}
+.font {
+    font-family: 'Noto Sans Lao';font-size: 22px;
+}
+</style>
+
+</head>
+<body>
+	<div class="dash-nav dash-nav-dark" th:fragment="nav">
+        <header>
+            <a href="#" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="/" class="spur-logo"><i class="fas fa-home"></i> <span class="font">ວິທະຍາໄລພະເມືອງ</span></a>
+        </header>
+        <nav class="dash-nav-list">
+            <a href="/" class="dash-nav-item">
+                <i class="fas fa-home"></i> ໜ້າຫຼັກ </a>
+            <div class="dash-nav-dropdown ">
+                <a href="#" class="dash-nav-item dash-nav-dropdown-toggle">
+                    <i class="fas fa-cube"></i> ໜ້າຕ່າງໆ </a>
+                <div class="dash-nav-dropdown-menu">
+                    <a href="/class/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-th-list"></i>&nbsp;&nbsp; ຫ້ອງຮຽນ</a>
+                    <a href="/grade/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-book"></i>&nbsp;&nbsp; ເກຣດ</a>
+                    <a href="/level/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-chart-bar"></i>&nbsp;&nbsp; ລະດັບ</a>
+                    <a href="/quarter/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-calendar"></i>&nbsp;&nbsp; ລາຍລະອຽດສົກຮຽນ</a>
+                    <a href="/registration/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-users"></i>&nbsp;&nbsp; ການລົງທະບຽນ</a>
+                    <a href="/report_card/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-address-card"></i>&nbsp;&nbsp; ລາຍງານ Card</a>
+                    <a href="/report_card_detail/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-address-card"></i>&nbsp;&nbsp;ລາຍລະອຽດCard</a>
+                    <a href="/school/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-th-list"></i>&nbsp;&nbsp; ສາຂາ</a>
+                    <a href="/school_year/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-calendar"></i>&nbsp;&nbsp; ສົກຮຽນ</a>
+                    <a href="/student/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-users"></i>&nbsp;&nbsp; ນັກຮຽນ</a>
+                    <a href="/subject/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-book"></i>&nbsp;&nbsp; ວິຊາ</a>
+                    
+                    <a href="/teacher/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-users"></i>&nbsp;&nbsp; ຄູ-ອາຈານ</a>
+                    <a href="/teaching/dashboard" class="dash-nav-dropdown-item"><i class="fas fa-book-open"></i>&nbsp;&nbsp; ການສອນ</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

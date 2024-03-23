@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/spur.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="/js/chart-js-config.js"></script>
+    <title>ລະບົບຈັດວິທະຍາໄລພະເມືອງ</title>
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans Lao' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Noto Sans Lao';font-size: 22px;
+}
+.ml-10{
+margin-left: 700px;
+}
+</style>
+
+</head>
+<body>
+    <div class="dash">
+        <div th:replace="fragments/nav :: nav"></div>
+        <div class="dash-app">
+            <header class="dash-toolbar">
+                <a href="#!" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <a href="#!" class="searchbox-toggle">
+                    <i class="fas fa-search"></i>
+                </a>
+                <form class="searchbox" action="#" th:action="@{/student/search}" method="get">
+                    <a href="#!" class="searchbox-toggle"> <i class="fas fa-arrow-left"></i> </a>
+                    <button type="submit" class="searchbox-submit"> <i class="fas fa-search"></i> </button>
+                    <input type="text" class="searchbox-input" placeholder="type to search" name="search">
+                </form>
+            </header>
+            <main class="dash-content">
+                <div class="container-fluid">
+                	<div class="card spur-card">
+                        <div class="card-header">
+                            <div class="spur-card-icon">
+                                <i class="fas fa-address-card"></i>
+                            </div>
+                            <div class="spur-card-title"><span th:text="${student.forename} + ' ' + ${student.name} + ' profile'">id</span></div>
+                            <div class="ml-10 pull-right"><i class="fas fa-print"></i> ປຼີ່ນ</div>
+                        </div>
+                        <div class="card-body ">
+                            <div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>Profile</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span><i class="fas fa-user"></i></span>
+						    	</div>
+						  	</div>
+							<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ຊື່</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span th:text="${student.name}">name</span>
+						    	</div>
+						  	</div>
+							<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ນາມສະກຸນ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span th:text="${student.forename}">forename</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ອາຍຸ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span>age</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ວັນເດືອນປີເກີດ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >dd/mm/yyy</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ບ້ານ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >Dongdok</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ເມືອງ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >ໄຊທານີ</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ແຂວງ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >ນະຄອນຫຼວງວຽງຈັນ</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ເບີໂທ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >02076589225</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ອີເມວ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span >email@gmail.com</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ລະຫັດຜ່ານ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span>12345678955</span>
+						    	</div>
+						  	</div>
+						  	
+							<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ຫ້ອງຮຽນ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span th:text="${registration?.c?.name}">class</span>
+						    	</div>
+						  	</div>
+							<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ສາຂາ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span th:text="${registration?.c?.school?.name}">class</span>
+						    	</div>
+						  	</div>
+							<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ສົກຮຽນ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span th:text="${registration?.c?.schoolYear?.id}">class</span>
+						    	</div>
+						  	</div>
+						  	<div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ຄ່າເທີມ</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<span>__ ກີບ</span>
+						    	</div>
+						  	</div>
+                        </div>
+                    </div>
+                    <div class="card spur-card">
+                        <div class="card-header">
+                            <div class="spur-card-icon">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <div class="spur-card-title"> ລາຍງານ card </div>
+                        </div>
+                        <div class="card-body ">
+                            <table class="table table-in-card">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ວິຊາ</th>
+                                        <th scope="col">ສະເລ່ຍ</th>
+                                        <th scope="col">ຍົກຍ້ອງ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:if="${reportCardDetails?.empty}">
+							            <td>ຍັງບໍ່ມີນັກຮຽນເທື່ອ</td>
+							        </tr>
+							        <tr th:each="reportCardDetail, iter : ${reportCardDetails}">
+							            <td><span th:text="${reportCardDetail.teaching.subject.name}">subject</span></td>
+							            <td><span th:text="${means.get(iter.index)}">mean</span></td>
+							            <td><span th:text="${reportCardDetail.appreciation}">appreciation</span></td>
+							        </tr>
+                                </tbody>
+                            </table><br>
+                            <div class="row" style="margin-bottom:15px">
+								<div class="col-sm-2">
+						      		<strong>ສະເລ່ຍ Global</strong>
+						    	</div>
+						    	<div class="col-sm">
+						      		<strong><span th:text="${mean}">mean</span></strong>
+						    	</div>
+						  	</div>
+                        </div>
+                    </div>
+                	<a href="/student/dashboard"><button type="button" class="btn btn-primary mb-1"><i class="fas fa-angle-left"></i> ກັບຄືນ</button></a>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/spur.js"></script>
+</body>
+
+</html>
